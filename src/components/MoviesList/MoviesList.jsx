@@ -1,6 +1,7 @@
 import React from 'react';
 import { ListItem, ListMovies } from './MoviesList.styled';
 import { NavLinkStyled } from 'components/Layout/Layout.styled';
+import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
 export const MoviesList = ({ films }) => {
@@ -16,4 +17,13 @@ export const MoviesList = ({ films }) => {
       ))}
     </ListMovies>
   );
+};
+MoviesList.propTypes = {
+  films: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
 };

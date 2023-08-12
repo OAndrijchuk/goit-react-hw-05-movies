@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Card = ({ person }) => {
   return (
@@ -12,8 +13,15 @@ export const Card = ({ person }) => {
         }
         alt={person.original_name}
       />
-      <h4>{person.original_name}</h4>
-      <h4>{person.character}</h4>
+      <h3>{person.original_name}</h3>
+      <h5>{person.character}</h5>
     </li>
   );
+};
+Card.propTypes = {
+  person: PropTypes.shape({
+    profile_path: PropTypes.string,
+    original_name: PropTypes.string,
+    character: PropTypes.string,
+  }),
 };
