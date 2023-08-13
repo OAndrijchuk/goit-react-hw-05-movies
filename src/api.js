@@ -11,7 +11,7 @@ export const fethBestMovies = async () => {
     const { data } = await axios.get(`/trending/all/day`);
     return data;
   } catch (error) {
-    console.log(error.masseg);
+    console.log(error.message);
   }
 };
 
@@ -20,7 +20,7 @@ export const fethMovieInfo = async movieId => {
     const { data } = await axios.get(`/movie/${movieId}`);
     return data;
   } catch (error) {
-    console.log(error.masseg);
+    console.log(error.message);
   }
 };
 
@@ -29,7 +29,7 @@ export const fethMoviesByQuery = async query => {
     const { data } = await axios.get(`/search/movie`, { params: { query } });
     return data;
   } catch (error) {
-    console.log(error.masseg);
+    console.log(error.message);
   }
 };
 
@@ -38,7 +38,7 @@ export const fethCast = async movieId => {
     const { data } = await axios.get(`/movie/${movieId}/credits`);
     return data;
   } catch (error) {
-    console.log(error.masseg);
+    console.log(error.message);
   }
 };
 export const fethReviews = async movieId => {
@@ -46,6 +46,6 @@ export const fethReviews = async movieId => {
     const { data } = await axios.get(`/movie/${movieId}/reviews`);
     return data;
   } catch (error) {
-    console.log(error.masseg);
+    console.log(error.message);
   }
 };

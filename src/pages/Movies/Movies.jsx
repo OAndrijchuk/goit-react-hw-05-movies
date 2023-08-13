@@ -20,13 +20,17 @@ const Movies = () => {
         const { results } = await fethMoviesByQuery(query);
         setMovies(results);
       } catch (error) {
-        console.log(error.masseg);
+        console.log(error.message);
       }
     };
     fethMovies();
   }, [query]);
   const handleSubmit = e => {
     e.preventDefault();
+    if (!value) {
+      setSearchParams({});
+      return;
+    }
     setSearchParams({ query: value });
   };
 
